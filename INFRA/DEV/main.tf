@@ -73,7 +73,8 @@ module "sql_database" {
   sql_server_name     = "sqlpawanserverdev"
 
 }
-module "frontend_vm" {
+
+module "backend_vm" {
   depends_on = [module.frontend_subnet, module.resource_group, module.kv, module.sql_server, module.sql_database]
   source                   = "../../MODULES/AZURERM_VIRTUAL_MACHINE"
   vm_name                  = "vmdev"
